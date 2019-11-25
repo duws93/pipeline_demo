@@ -17,9 +17,8 @@ pipeline {
       
       stage('build'){
          steps{
-            docker build .
+            docker build -t ubuntu Dockerfile
          }
-      }
-      
+      }      
    }
 }
