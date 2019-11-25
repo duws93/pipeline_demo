@@ -21,6 +21,7 @@ pipeline {
             sh 'docker build -t ubuntu .'
          }
       }
+   }
       post{
          success{
             emailext(
@@ -41,5 +42,4 @@ pipeline {
             )   
          }
       }
-   }
 }
