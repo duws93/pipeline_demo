@@ -5,7 +5,7 @@ pipeline {
       
       stage('Prepare'){
          steps{
-            sh git --version
+            sh 'git --version'
          }
       }
       
@@ -17,7 +17,7 @@ pipeline {
       
       stage('build'){
          steps{
-            docker build -t ubuntu Dockerfile
+            sh 'docker build -t ubuntu Dockerfile'
          }
       }      
    }
