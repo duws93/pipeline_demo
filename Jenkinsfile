@@ -5,8 +5,7 @@ pipeline {
       
       stage('Prepare'){
          steps{
-            v = `git --version`
-            echo "duws version is " $v
+            sh git --version
          }
       }
       
