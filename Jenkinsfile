@@ -17,7 +17,7 @@ pipeline {
       
       stage('build'){
          steps{
-            sh 'docker build -t ubuntu Dockerfile'
+            sh 'docker build -t ubuntu $WORKSPACE/Dockerfile'
          }
       }      
    }
