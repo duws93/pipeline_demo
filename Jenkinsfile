@@ -1,5 +1,5 @@
 pipeline {
-   agent any
+   agent duws-3
 
    stages {
       stage('Hello') {
