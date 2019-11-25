@@ -1,16 +1,26 @@
 pipeline {
    agent { label 'duws-3' }
-
+   
    stages {
-      stage('Hello') {
-         steps {
-            echo 'Hello World again'
+      
+      stage('Prepare'){
+         steps{
+            sh v=`git --version`
+            echo "duws version is " $v
          }
       }
-   }
-   post {
-      always {
-         echo " finish job"
+      
+      stage('source'){
+         steps{
+            git branch : 'master' , url: 'https://github.com/duws93/git_home.git'
+         }
       }
+      
+      stage('build'){
+         steps{
+            docker build .
+         }
+      }
+      
    }
 }
