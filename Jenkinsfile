@@ -1,5 +1,5 @@
 pipeline {
-   agent { label '135.251.206.38' }
+   agent { label 'master' }
    
    stages {
       
